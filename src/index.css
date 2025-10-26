@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 18% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 220 18% 8%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 270 70% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradient colors */
+    --gradient-start: 25 95% 53%;
+    --gradient-mid: 270 70% 60%;
+    --gradient-end: 200 100% 50%;
+
+    /* Accent glow */
+    --glow-primary: 25 95% 53%;
+    --glow-accent: 270 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--gradient-start)),
+      hsl(var(--gradient-mid))
+    );
+    @apply rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--gradient-mid)),
+      hsl(var(--gradient-end))
+    );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
